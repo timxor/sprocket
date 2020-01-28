@@ -10,6 +10,27 @@ sprocket
 
 Voice conversion software - Voice conversion (VC) is a technique to convert a speaker identity of a source speaker into that of a target speaker. This software enables the users to develop a traditional VC system based on a Gaussian mixture model (GMM) and a vocoder-free VC system based on a differential GMM (DIFFGMM) using a parallel dataset of the source and target speakers.
 
+
+
+## macos quick start
+
+```
+pip3 install numpy==1.15.4 cython
+pip3 install sprocket-vc
+cd example
+python3 download_vcc2016data.py
+
+
+
+python3 initialize.py -1 SF1 TF1 16000
+python3 initialize.py -2 SF1 TF1 16000
+python3 initialize.py -3 SF1 TF1 16000
+python3 run_sprocket.py -1 -2 -3 -4 -5 SF1 TF1
+python3 run_f0_transformation.py SF1 TF1
+
+
+```
+
 ## Paper and slide
 - K. Kobayashi, T. Toda, "sprocket: Open-Source Voice Conversion Software," Proc. Odyssey, pp. 203-210, June 2018.
 [[paper]](https://nuss.nagoya-u.ac.jp/s/h8YKnq6qxjjxtU3)
